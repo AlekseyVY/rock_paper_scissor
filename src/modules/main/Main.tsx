@@ -1,15 +1,15 @@
 import React from 'react';
 import { Container, ContentContainer, RulesContainer } from './main.styles';
 import ScoreComponent from '../score_component/ScoreComponent';
-import SelectContainer from '../option_select/select_container/SelectContainer';
 import Rules from '../rules/Rules';
+import MainGame from '../game_component/MainGame';
 
 function Main() {
   return (
     <Container>
       <ContentContainer>
         <ScoreComponent />
-        <SelectContainer />
+        <MainGame />
         <RulesContainer>
           <Rules />
         </RulesContainer>
