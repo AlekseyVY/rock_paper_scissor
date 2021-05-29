@@ -1,21 +1,13 @@
+import { IAction, IState } from './store.types';
+
 const UPDATE_SCORE = 'UPDATE_SCORE';
 const SELECTED = 'SELECTED';
 const GET_SCORE = 'GET_SCORE';
-
-type IState = {
-  score: number,
-  selected: boolean
-}
 
 const initialState: IState = {
   score: 0,
   selected: false,
 };
-
-type IAction = {
-  type: string,
-  payload?: boolean
-}
 
 const gameReducer = (state = initialState, action: IAction) => {
   switch (action.type) {
