@@ -13,9 +13,15 @@ export const Container = styled.div`
 export const ContentContainer = styled.div`
   width: 1366px;
   height: 768px;
-  border: 1px white solid;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  position: relative;
+`;
+
+export const RulesContainer = styled.div`
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
 `;
