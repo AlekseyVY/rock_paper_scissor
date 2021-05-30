@@ -10,8 +10,6 @@ function MainGame() {
   const [count, setCount] = useState(0);
   const optionChoice = useSelector((store: IStore) => store.gameReducer.option);
   const userSelected = useSelector((store: IStore) => store.gameReducer.selected);
-  console.log(userSelected);
-  console.log(count);
   useEffect(() => {
     setSelected(userSelected);
     setCount(count + 1);
