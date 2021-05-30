@@ -1,10 +1,11 @@
 import React from 'react';
 // import { useDispatch, useSelector } from 'react-redux';
 import {
+  AgainButton,
   Container,
   LeftBlock,
   LeftBlockBot,
-  LeftBlockTop,
+  LeftBlockTop, MiddleBlock, MiddleBlockBot, MiddleBlockTop,
   RightBlock,
   RightBlockBot,
   RightBlockTop,
@@ -34,6 +35,16 @@ function GameResolution({ choice }: choiceProp) {
           <ChoiceRender choice={choice} />
         </LeftBlockBot>
       </LeftBlock>
+      <MiddleBlock>
+        <MiddleBlockTop>
+          {choice}
+        </MiddleBlockTop>
+        <MiddleBlockBot>
+          <AgainButton>
+            {choice}
+          </AgainButton>
+        </MiddleBlockBot>
+      </MiddleBlock>
       <RightBlock>
         <RightBlockTop>
           the house picked
