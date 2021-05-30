@@ -10,6 +10,7 @@ import {
   RightBlockTop,
 } from './game.resolution.style';
 import ChoiceRender from '../choice_render/ChoiceRender';
+import { aiSelect } from '../../middleware/aiSelect';
 // import { optionSelectAction } from '../../store/gameReducer';
 // import { IStore } from '../../store/store.types';
 
@@ -22,6 +23,7 @@ function GameResolution({ choice }: choiceProp) {
   // console.log(optionChoice);
   // const dispatch = useDispatch();
   // onClick={() => dispatch(optionSelectAction(null))}
+  const aiSelection = aiSelect();
   return (
     <Container>
       <LeftBlock>
@@ -37,7 +39,7 @@ function GameResolution({ choice }: choiceProp) {
           the house picked
         </RightBlockTop>
         <RightBlockBot>
-          AI SELECTION
+          <ChoiceRender choice={aiSelection} />
         </RightBlockBot>
       </RightBlock>
     </Container>
