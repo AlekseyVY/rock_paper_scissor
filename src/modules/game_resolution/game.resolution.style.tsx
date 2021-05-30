@@ -115,4 +115,8 @@ export const AgainButton = styled.div`
   text-align: left;
   text-transform: uppercase;
   color: #3B4262;
+  &:hover {
+    cursor: pointer;
+    color: #DB2E4D;
+  }
 `;
