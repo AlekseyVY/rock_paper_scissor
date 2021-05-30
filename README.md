@@ -2,7 +2,7 @@
 
 ![Design preview for the Rock, Paper, Scissors coding challenge](./design/desktop-preview.jpg)
 
-## [link to project](https://todo-app-smoky-nine.vercel.app/)
+## [link to project](https://serene-swanson-6fa1bf.netlify.app/)
 
 ## Your users should be able to:
 
