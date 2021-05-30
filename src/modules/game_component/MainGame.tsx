@@ -7,22 +7,19 @@ import GameResolution from '../game_resolution/GameResolution';
 
 function MainGame() {
   const [selected, setSelected] = useState<boolean>(false);
-  const [option, setOption] = useState<string | null>(null);
+  const [count, setCount] = useState(0);
   const optionChoice = useSelector((store: IStore) => store.gameReducer.option);
-  console.log(optionChoice);
+  const userSelected = useSelector((store: IStore) => store.gameReducer.selected);
+  console.log(userSelected);
+  console.log(count);
   useEffect(() => {
-    if (optionChoice !== null) {
-      setSelected(true);
-      setOption(optionChoice);
-    } else {
-      setSelected(false);
-      setOption(optionChoice);
-    }
+    setSelected(userSelected);
+    setCount(count + 1);
   }, [optionChoice]);
   if (selected) {
     return (
       <Container>
-        <GameResolution choice={option} />
+        <GameResolution choice={optionChoice} />
       </Container>
     );
   }
