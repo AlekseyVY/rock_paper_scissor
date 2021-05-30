@@ -11,7 +11,7 @@ function MainGame() {
   const optionChoice = useSelector((store: IStore) => store.gameReducer.option);
   console.log(optionChoice);
   useEffect(() => {
-    if (optionChoice) {
+    if (optionChoice !== null) {
       setSelected(true);
       setOption(optionChoice);
     } else {

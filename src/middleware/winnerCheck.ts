@@ -1,5 +1,4 @@
-export function winnerCheck(human: string | null, ai: string | null) {
-  // ! -> rock -> scissors -> paper -> !
+export function winnerCheck(human: string | null, ai: string | null): string {
   const win = 'you won';
   const lose = 'you lose';
   const draw = 'draw';
