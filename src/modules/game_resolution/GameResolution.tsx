@@ -24,7 +24,6 @@ function GameResolution({ choice }: choiceProp) {
   const [condition] = useState<string | null>(winnerCheck(choice, aiSelection));
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log(condition);
     if (condition === 'you won') {
       dispatch(updateScoreActon());
     }
