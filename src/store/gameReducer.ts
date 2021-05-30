@@ -19,15 +19,23 @@ const gameReducer = (state = initialState, action: IAction) => {
       };
     }
     case OPTION_SELECT: {
+      if (action.payload === null) {
+        return {
+          ...state,
+          option: action.payload,
+          selected: false,
+        };
+      }
       return {
         ...state,
         option: action.payload,
+        selected: true,
       };
     }
     case UPDATE_SCORE: {
       return {
         ...state,
-        score: action.payload,
+        score: state.score + 1,
       };
     }
     case SELECTED: {
@@ -44,7 +52,7 @@ const gameReducer = (state = initialState, action: IAction) => {
 
 export const getScoreAction = () => ({ type: 'GET_SCORE' });
 
-export const updateScoreActon = (data: number) => ({ type: 'UPDATE_SCORE', payload: data });
+export const updateScoreActon = () => ({ type: 'UPDATE_SCORE' });
 
 export const updateSelectedAction = (data: boolean) => ({ type: 'SELECTED', payload: data });
 

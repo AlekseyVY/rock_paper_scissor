@@ -1,5 +1,5 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import {
   AgainButton,
   Container,
@@ -14,25 +14,21 @@ import ChoiceRender from '../choice_render/ChoiceRender';
 import { aiSelect } from '../../middleware/aiSelect';
 import { winnerCheck } from '../../middleware/winnerCheck';
 import { optionSelectAction, updateScoreActon } from '../../store/gameReducer';
-import { IStore } from '../../store/store.types';
 
 type choiceProp = {
   choice: string | null
 };
 
 function GameResolution({ choice }: choiceProp) {
-  const score = useSelector((store: IStore) => store.gameReducer.score);
-  console.log(score);
-  const dispatch = useDispatch();
   const aiSelection = aiSelect();
-  let condition = null;
-  if (choice !== null) {
-    condition = winnerCheck(choice, aiSelection);
+  const [condition] = useState<string | null>(winnerCheck(choice, aiSelection));
+  const dispatch = useDispatch();
+  useEffect(() => {
+    console.log(condition);
     if (condition === 'you won') {
-      console.log(condition);
-      dispatch(updateScoreActon(score + 1));
+      dispatch(updateScoreActon());
     }
-  }
+  }, []);
   return (
     <Container>
       <LeftBlock>
@@ -65,4 +61,4 @@ function GameResolution({ choice }: choiceProp) {
   );
 }
 
-export default GameResolution;
+export default React.memo(GameResolution);
