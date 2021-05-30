@@ -8,7 +8,7 @@ function Score() {
   const score = useSelector((store: IStore) => store.gameReducer.score);
   useEffect(() => {
     setGameState(score);
-  }, []);
+  }, [score]);
   return (
     <Container>
       <Title>

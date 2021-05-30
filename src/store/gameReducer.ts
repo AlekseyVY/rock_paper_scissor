@@ -3,10 +3,12 @@ import { IAction, IState } from './store.types';
 const UPDATE_SCORE = 'UPDATE_SCORE';
 const SELECTED = 'SELECTED';
 const GET_SCORE = 'GET_SCORE';
+const OPTION_SELECT = 'OPTION_SELECT';
 
 const initialState: IState = {
   score: 0,
   selected: false,
+  option: null,
 };
 
 const gameReducer = (state = initialState, action: IAction) => {
@@ -14,6 +16,12 @@ const gameReducer = (state = initialState, action: IAction) => {
     case GET_SCORE: {
       return {
         state,
+      };
+    }
+    case OPTION_SELECT: {
+      return {
+        ...state,
+        option: action.payload,
       };
     }
     case UPDATE_SCORE: {
@@ -39,5 +47,7 @@ export const getScoreAction = () => ({ type: 'GET_SCORE' });
 export const updateScoreActon = (data: number) => ({ type: 'UPDATE_SCORE', payload: data });
 
 export const updateSelectedAction = (data: boolean) => ({ type: 'SELECTED', payload: data });
+
+export const optionSelectAction = (data: string | null) => ({ type: 'OPTION_SELECT', payload: data });
 
 export default gameReducer;

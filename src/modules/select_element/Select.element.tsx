@@ -1,14 +1,17 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Container, HoverShadow } from './select.element.style';
+import { optionSelectAction } from '../../store/gameReducer';
 
 type SelectElementProps = {
   element: string;
 }
 
 function SelectElement({ element }: SelectElementProps) {
+  const dispatch = useDispatch();
   if (element === 'PAPER') {
     return (
-      <Container>
+      <Container onClick={() => dispatch(optionSelectAction('PAPER'))}>
         <svg width="204" height="209" viewBox="0 0 204 209" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g filter="url(#filter0_d)">
             <ellipse cx="102" cy="101.5" rx="99" ry="101.5" fill="#2A45C2" />
@@ -68,7 +71,7 @@ function SelectElement({ element }: SelectElementProps) {
     );
   } if (element === 'ROCK') {
     return (
-      <Container>
+      <Container onClick={() => dispatch(optionSelectAction('ROCK'))}>
         <svg width="204" height="209" viewBox="0 0 204 209" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g filter="url(#filter0_d)">
             <ellipse cx="102" cy="101.5" rx="99" ry="101.5" fill="#9D1634" />
@@ -114,7 +117,7 @@ function SelectElement({ element }: SelectElementProps) {
     );
   }
   return (
-    <Container>
+    <Container onClick={() => dispatch(optionSelectAction('SCISSORS'))}>
       <svg width="204" height="209" viewBox="0 0 204 209" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g filter="url(#filter0_d)">
           <ellipse cx="102" cy="101.5" rx="99" ry="101.5" fill="#C76C1B" />

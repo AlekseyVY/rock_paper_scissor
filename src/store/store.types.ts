@@ -1,11 +1,12 @@
 export type IState = {
   score: number,
-  selected: boolean
+  selected: boolean,
+  option: string | null
 };
 
 export type IAction = {
   type: string,
-  payload?: boolean
+  payload?: boolean,
 };
 
 export type IStore = {
