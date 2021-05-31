@@ -16,4 +16,4 @@
 - Rock beats Scissors
 - Scissors beats Paper
 
-### coded by Aleksey Vasiliev. -> [Join me on my social](https://vk.com/alekseyvy) <
+### coded by Aleksey Vasiliev. -> [Join me on my social](https://vk.com/alekseyvy) <-
